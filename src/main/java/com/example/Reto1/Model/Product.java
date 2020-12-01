@@ -2,11 +2,13 @@ package com.example.Reto1.Model;
 
 public class Product {
 
+    private static int count = 0; 
+
     public Product(){
     }
 
-    public Product(int _id, String _name, double _price, String _image) {
-        this.id = _id;
+    public Product( String _name, double _price, String _image) {
+        this.id = count;
         this.name = _name;
         this.price = _price;
         this.image = _image;

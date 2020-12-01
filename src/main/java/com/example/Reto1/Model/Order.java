@@ -2,6 +2,8 @@ package com.example.Reto1.Model;
 
 public class Order {
     
+    private static int count = 0;    
+
     public Order(){
     }
 
@@ -19,8 +21,8 @@ public class Order {
 
 
 
-    public Order(int _id, String _date, String _user, String _status) {
-        this.id = _id;
+    public Order(String _date, String _user, String _status) {
+        this.id = count ++;
         this.date = _date;
         this.user = _user;
         this.status = _status;
