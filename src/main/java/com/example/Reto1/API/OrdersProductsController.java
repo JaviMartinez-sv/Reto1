@@ -19,12 +19,9 @@ public class OrdersProductsController {
        
     ));
 
-    @GetMapping("/ordersProducts")
-    public List<OrderProduct> getAll(){
-        return ordersProductsLists;
-    }
 
-    
+
+
 }
 
 

@@ -18,9 +18,5 @@ public class OrdersController {
         new Order( "02/12/2020","Maria", "Cancelled")
     ));
 
-    // Obtengo todos los pedidos
-    @GetMapping("/orders")
-    public List<Order> getAll(){
-        return orders;
-    }
+
 }
