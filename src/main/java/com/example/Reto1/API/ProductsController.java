@@ -18,5 +18,9 @@ public class ProductsController {
 
     ));
 
-
+    //Obtengo todos los productos
+    @GetMapping("/products")
+    public List<Product> getAll(){
+        return products;
+    }
 }

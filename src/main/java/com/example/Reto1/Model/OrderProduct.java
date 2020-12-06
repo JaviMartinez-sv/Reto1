@@ -15,7 +15,7 @@ public class OrderProduct {
 
     public OrderProduct( int _quantity, Order _order, Product _product) {
 
-        this.id = count;
+        this.id = count ++;
         this.quantity = _quantity;
         this.order =_order;
         this.product = _product;
