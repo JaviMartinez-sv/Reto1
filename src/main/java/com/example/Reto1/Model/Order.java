@@ -70,5 +70,13 @@ public class Order {
         this.status = status;
     }
 
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Order.count = count;
+    }
+
     
 }

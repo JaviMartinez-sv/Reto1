@@ -7,6 +7,7 @@ import java.util.List;
 import com.example.Reto1.Model.OrderProduct;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -26,25 +27,24 @@ public class OrdersProductsController {
         return ordersProductsLists;
     }
 
-    /*
-    // Obtengo los pedidos que coincidan con el id de pedido
-    @GetMapping("/ordersProducts/{idorder}")
-    public ArrayList<OrderProduct>ProductsbyOrderId(@PathVariable int idorder){
-        boolean coincide = false;
-        ArrayList<OrderProduct> ordersProductsNew = new ArrayList<>();
-        for (OrderProduct elemento : ordersProductsLists){
-            if(elemento.getOrder().getIdorder()== idorder){
-                ordersProductsNew.add(elemento);
-                coincide=true;
-            }
-        }if(coincide){
-            return ordersProductsNew;
-        }
-    }
+        // Obtener productos por Id
+        @GetMapping("/orderwithproducts/{id}")
+        public ArrayList<OrderProduct> OrderById(@PathVariable int id ){
+            boolean match = false;
+            ArrayList<OrderProduct> orderProducts2 = new ArrayList<OrderProduct>();
     
+            for(OrderProduct op : ordersProductsLists){
+                if(op.getOrder().getId() == id){
+                    orderProducts2.add(op);
+                    match = true;
+                }
+            } if (match){
+                return orderProducts2;
+            }
+            return orderProducts2;
+        }
 
-    /*
-
+    /*    
     @PostMapping("/orderProduct")
     public OrderProduct postOrderProduct(@RequestBody OrderProduct oc){
         ordersProductsLists.add(oc);
@@ -68,6 +68,7 @@ public class OrdersProductsController {
         }
     }
 
+    */
     /*
     @DeleteMapping("/orderproducts/{id}")
     public void Delete(@Pathvariable("id") int id){

@@ -58,6 +58,14 @@ public class Product {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Product.count = count;
+    }
     
 
 }
