@@ -23,4 +23,5 @@ public class ProductsController {
     public List<Product> getAll(){
         return products;
     }
+
 }

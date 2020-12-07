@@ -17,10 +17,6 @@ public class Order {
     }
     
 
-
-
-
-
     public Order(String _date, String _user, String _status) {
         this.id = count ++;
         this.date = _date;
@@ -74,4 +70,5 @@ public class Order {
         this.status = status;
     }
 
+    
 }
