@@ -7,6 +7,7 @@ import java.util.List;
 import com.example.Reto1.Model.OrderProduct;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,6 +24,24 @@ public class OrdersProductsController {
     public List<OrderProduct> getAll(){
         return ordersProductsLists;
     }
+
+    // Obtener productos por Id
+    @GetMapping("/orderwithproducts/{id}")
+    public ArrayList<OrderProduct> OrderById(@PathVariable int id ){
+        boolean match = false;
+        ArrayList<OrderProduct> orderProducts2 = new ArrayList<OrderProduct>();
+
+        for(OrderProduct op : ordersProductsLists){
+            if(op.getOrder().getId() == id){
+                orderProducts2.add(op);
+                match = true;
+            }
+        } if (match){
+            return orderProducts2;
+        }
+        return orderProducts2;
+    }
+
 
 
 
