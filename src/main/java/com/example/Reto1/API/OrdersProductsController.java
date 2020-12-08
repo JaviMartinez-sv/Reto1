@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.example.Reto1.Model.Order;
 import com.example.Reto1.Model.OrderProduct;
+import com.example.Reto1.Model.Product;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,7 +43,7 @@ public class OrdersProductsController {
         ArrayList<OrderProduct> orderProductDos = new ArrayList<OrderProduct>();
 
         for (OrderProduct op : ordersProductsLists) {
-            if (op.getOrder().getId() == id) {
+            if (op.getOrder().getIdOrder() == id) {
                 orderProductDos.add(op);
                 match = true;
             }
@@ -74,17 +75,25 @@ public class OrdersProductsController {
 
         // Recorro la lista ordersProductsLists en busca del id que le he introducido y lo borro
         for(OrderProduct op : ordersProductsLists){
-            if(op.getOrder().getId() == id){
+            if(op.getOrder().getIdOrder() == id){
                 ordersProductsLists.remove(op);
             }
         }
 
         // Recorro la lista orders en busca del id que le he introducido y lo borro
         for(Order o : OrdersController.orders){
-            if(o.getId() == id){
+            if(o.getIdOrder() == id){
                 OrdersController.orders.remove(o);
             }
         }
+
+        // Recorro la lista pedidos en busca del id que le he introducido y lo borro
+        for(Product p : ProductsController.products){
+            if(p.getIdProduct() == id){
+                ProductsController.products.remove(p);
+            }
+        }
+
     }
 
 
@@ -92,6 +101,8 @@ public class OrdersProductsController {
     petición debería devolver un error HTTP que identifique adecuadamente este
     error. 4.4 */
 
+
+    
 
 
 

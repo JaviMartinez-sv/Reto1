@@ -7,23 +7,23 @@ public class Product {
     public Product(){
     }
 
-    public Product( String _name, double _price, String _image) {
-        this.id = count ++;
-        this.name = _name;
-        this.price = _price;
-        this.image = _image;
+    public Product( String name, double price, String image) {
+        this.idProduct = count ++;
+        this.name = name;
+        this.price = price;
+        this.image = image;
     }
 
     // Set y Get id
 
-    private int id;
+    private int idProduct;
 
-    public int getId() {
-        return id;
+    public int getIdProduct() {
+        return idProduct;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdProduct(int idProduct) {
+        this.idProduct = idProduct;
     }
 
     // Set y Get name
