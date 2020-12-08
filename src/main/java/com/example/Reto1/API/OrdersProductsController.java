@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -105,7 +106,29 @@ public class OrdersProductsController {
     error. 4.4 */
 
 
-    
+    /*Permite editar un pedido añadiendo o eliminando productos en ese pedido.
+    En caso de que se proporcione un ID que no exista o haya algún error, la
+    petición debería devolver un error HTTP que identifique adecuadamente este
+    error.*/
+
+    @PutMapping("/putop/{id}")
+    public OrderProduct UpdateOP(@RequestBody OrderProduct op, @PathVariable("id") int id){
+        for(int i=0; i < ordersProductsLists.size(); i++){
+            if(ordersProductsLists.get(i).getId() == id){
+                if(op.getOrder().getIdOrder() > 0){
+                    ordersProductsLists.get(i).setOrder(op.getOrder());
+                }
+                if(op.getProduct().getIdProduct() > 0){
+                    ordersProductsLists.get(i).setProduct(op.getProduct());
+                }
+                if(op.getQuantity()> 0){
+                    ordersProductsLists.get(i).setQuantity(op.getQuantity());
+                }
+                return op;
+            }        
+        }
+        return op;
+    }
 
 
 
