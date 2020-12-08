@@ -7,11 +7,11 @@ public class Product {
     public Product(){
     }
 
-    public Product( String _name, double _price, String _image) {
+    public Product( String name, double price, String image) {
         this.id = count ++;
-        this.name = _name;
-        this.price = _price;
-        this.image = _image;
+        this.name = name;
+        this.price = price;
+        this.image = image;
     }
 
     // Set y Get id

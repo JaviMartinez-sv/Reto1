@@ -1,92 +1,31 @@
-<!DOCTYPE html>
-<html xmlns="http://www.thymeleaf.org">
+
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script type="text/javascript" src="/js/custom.js"></script>
-    <link href="/css/home.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Peliculas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
-<header>
 
-</header>
-
-<body style="background-color: #dcdcdc;">
-    <div class="p-3 bg-light text-center">
-        <h1>Shop</h1>
-        <div class="row">
-            <div class="col-8 productsGrid container-sm w-75 d d-flex flex-sm-wrap justify-content-between mt-5 mr-0 ml-0">
-                <div class="card d d-flex mb-5 ml-3 mr-3" style="width: 30%;">
-                    <div th:each="orderProduct : ${ordersProductsLists}" th:object="${orderProduct}" class="productListCards">
-                    <img class="card-img-top image-card" th:src="*{image}" alt="Card image">
-                    <div class="card-body">
-                        <h5 class="card-title" th:></h5>
-                        <p class="card-text">750.0€</p>
-                        <button class="btn btn-primary" onclick="javascript:addNewProduct(0)">Añadir al carrito</button>
-                    </div>
-                    <!-- </div> -->
-                </div>
-            </div>
-
-
-
-            <div class="col-4 mt-5 productList container-sm">
-                <div class="container-fluid bg-white">
-                    <div class="h5 mt-2 mb-4 pt-3 wrapperTitleCart">
-                        <p class="titleCart">Mi carrito</p>
-                        <i class="deleteCart fa fa-trash" onclick="javascript:deleteCompleteOrder(3)"></i>
-                    </div>
-                    <div class="productListCards ">
-                        <p class="font-weight-bold ">Patinete eléctrico</p>
-                        <div class="selector ">
-                            <button type="button " name="less " class="less " onclick="javascript:removeProduct(3)">-</button>
-                            <p class="qtyNumber ">1</p>
-                            <button type="button " name="plus " class="plus " onclick="javascript:addProduct(3)">+</button>
-                        </div>
-                        <div class="totalAmout">
-                            <p>450,00€</p>
-                        </div>
-                        <div class="wraperCross">
-                            
-                        </div>
-                    </div>
-                    <div class="productListCards ">
-                        <p class="font-weight-bold ">iPhone 12 128GB</p>
-                        <div class="selector ">
-                            <button type="button " name="less " class="less " onclick="javascript:removeProduct(1)">-</button>
-                            <p class="qtyNumber ">2</p>
-                            <button type="button " name="plus " class="plus " onclick="javascript:addProduct(1)">+</button>
-                        </div>
-                        <div class="totalAmout">
-                            <p>2.399,98€</p>
-                        </div>
-                        <div class="wraperCross">
-                            <i class="fa fa-times crossDelete" onclick="javascript:deleteProducts(4)"></i>
-                        </div>
-                    </div>
-                    <div class="h5 mt-2 mb-4 pt-3 wrapperTotalPrice">
-                        <p class="totalTitle">Total</p>
-                        <p class="totalPrice">2.849,98€</p>
-                        <button class="btn btn-success" disabled="disabled">Aceptar y pagar</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
+<body>
+    <div class="header">
+        <h1 class="header_logo">Tienda</h1>
     </div>
+    <div class="offset">
 
-    <div><body>
-    <select class="m-3 rounded-sm text-left fixed-bottom text-right text-wrap p-1" id="languages" onchange="reload();">
-        <option value="th:text=#{button.language}" class="p-1" selected>Seleccionar idioma</option>
-        <option value="en">Inglés</option>
-        <option value="es">Español</option>
-    </select>
+        <div class="w3-container">
+            <div class="w3-card-4" style="width:20%" th:each="product : ${products}" th:object="${product}">
+                <img alt="Alps" style="width:100%" th:src="*{image}">
+                <div class="w3-container w3-center">
 
-</body></div>
+                    <h4 style="color:blue;" th:text="*{name}"></h4>
 
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 
 </html>
-
