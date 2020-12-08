@@ -78,6 +78,9 @@ public class OrdersProductsController {
             if(op.getOrder().getIdOrder() == id){
                 ordersProductsLists.remove(op);
             }
+            if(op.getProduct().getIdProduct() == id){
+                ordersProductsLists.remove(op);
+            }
         }
 
         // Recorro la lista orders en busca del id que le he introducido y lo borro
