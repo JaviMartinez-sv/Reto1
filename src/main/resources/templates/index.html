@@ -12,7 +12,7 @@
             <img class="card-img" src="https://adaits.es/files/2017/11/cabecera-fondo-leaders.jpg" alt="Card image" height="250px">
             <div class="card-img-overlay">
               <h4 class="card-title">Ecommerce</h4>
-              <p class="card-text">Tienda dedicada a la venta de bebidas alcoholicas</p>
+              <p class="card-text" th:text="#{lang.description}">Tienda dedicada a la venta de bebidas alcoholicas</p>
               <p class="card-text">Javier Martinez</p>
             </div>
           </div>
@@ -36,10 +36,29 @@
         <div class="card bg-dark text-white" >
             <img class="card-img" src="https://adaits.es/files/2017/11/cabecera-fondo-leaders.jpg" alt="Card image" height="70px">
             <div class="card-img-overlay">
-              <h4 class="card-title"style="text-align: center;">" La chispa de la vida"</h4> <!--It's the Real Thing-->
+              <h4 class="card-title"style="text-align: center;" th:text="#{lang.slogan}">" La chispa de la vida"</h4> <!--It's the Real Thing-->
             </div>
-          </div>
+        </div>
+        <div>
+            <select class="m-3 rounded-sm text-left fixed-bottom text-right text-wrap p-1" id="languages" onchange="reload();">
+                <option value="th:text=#{lang.change}" class="p-1" selected>Seleccionar idioma</option>
+                <option value="en" th:text="#{lang.en}"></option>
+                <option value="es" th:text="#{lang.es}"></option>
+            </select>
+        </div>
+
     </footer>
+
+    <script>
+    function reload() {
+    var e = document.getElementById("languages");
+    var selectedLang = e.options[e.selectedIndex].value;
+
+    var url = "?lang=" + selectedLang
+    location.href = url;
+}
+    </script>
+
+
 </body>
->>>>>>> develop
 </html>
