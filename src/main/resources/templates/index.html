@@ -114,11 +114,11 @@
     </footer>
     <script>
 
-        function addProduct(id_product) {
+        function addProduct(idproduct) {
 
             let url = 'http://shopjm.azurewebsites.net/orders/3/products/1?action=add'
 
-            fetch('http://shopjm.azurewebsites.net/products/' + id_product)
+            fetch('http://shopjm.azurewebsites.net/products/' + idproduct)
                 .then(res => respones = res.json())
                 .then(data => {
 
