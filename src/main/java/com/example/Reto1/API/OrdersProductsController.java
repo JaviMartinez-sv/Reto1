@@ -77,24 +77,24 @@ public class OrdersProductsController {
             if(op.getOrder().getIdOrder() == id){
                 ordersProductsLists.remove(op);
             }
-     //       if(op.getProduct().getIdProduct() == id){
+            if(op.getProduct().getIdProduct() == id){
                 ordersProductsLists.remove(op);
             }
-     //   }
+        }
 
         // Recorro la lista orders en busca del id que le he introducido y lo borro
         for(Order o : OrdersController.orders){
-    //        if(o.getIdOrder() == id){
+            if(o.getIdOrder() == id){
                 OrdersController.orders.remove(o);
             }
-    //    }
+        }
 
         // Recorro la lista pedidos en busca del id que le he introducido y lo borro
         for(Product p : ProductsController.products){
-    //        if(p.getIdProduct() == id){
+            if(p.getIdProduct() == id){
                 ProductsController.products.remove(p);
             }
-    //    }
+        }
 
     }
 
@@ -114,17 +114,17 @@ public class OrdersProductsController {
         for(int i=0; i < ordersProductsLists.size(); i++){
             if(ordersProductsLists.get(i).getId() == id){
                 if(op.getOrder().getIdOrder() > 0){
-      //              ordersProductsLists.get(i).setOrder(op.getOrder());
+                    ordersProductsLists.get(i).setOrder(op.getOrder());
                 }
-      //          if(op.getProduct().getIdProduct() > 0){
-      //              ordersProductsLists.get(i).setProduct(op.getProduct());
+                if(op.getProduct().getIdProduct() > 0){
+                    ordersProductsLists.get(i).setProduct(op.getProduct());
                 }
                 if(op.getQuantity()> 0){
                     ordersProductsLists.get(i).setQuantity(op.getQuantity());
                 }
                 return op;
             }        
-    //    }
+        }
         return op;
     }
 
