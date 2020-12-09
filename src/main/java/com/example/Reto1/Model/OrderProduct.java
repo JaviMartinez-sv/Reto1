@@ -13,12 +13,12 @@ public class OrderProduct {
 
     // Set y Get id
 
-    public OrderProduct( int _quantity, Order _order, Product _product) {
+    public OrderProduct( int quantity, Order order, Product product) {
 
         this.id = count ++;
-        this.quantity = _quantity;
-        this.order =_order;
-        this.product = _product;
+        this.quantity = quantity;
+        this.order = order;
+        this.product = product;
 	}
 
 	private int id;
@@ -60,6 +60,18 @@ public class OrderProduct {
     }
 
 
+    public void setOrder(Order order) {
+        this.order = order;
+    }
 
-    
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+
+  
 }

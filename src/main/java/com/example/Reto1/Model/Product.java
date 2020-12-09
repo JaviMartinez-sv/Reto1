@@ -8,7 +8,7 @@ public class Product {
     }
 
     public Product( String name, double price, String image) {
-        this.id = count ++;
+        this.idProduct = count ++;
         this.name = name;
         this.price = price;
         this.image = image;
@@ -16,14 +16,14 @@ public class Product {
 
     // Set y Get id
 
-    private int id;
+    private int idProduct;
 
-    public int getId() {
-        return id;
+    public int getIdProduct() {
+        return idProduct;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdProduct(int idProduct) {
+        this.idProduct = idProduct;
     }
 
     // Set y Get name

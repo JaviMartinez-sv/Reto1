@@ -17,12 +17,8 @@ public class Order {
     }
     
 
-
-
-
-
     public Order(String _date, String _user, String _status) {
-        this.id = count ++;
+        this.idOrder = count ++;
         this.date = _date;
         this.user = _user;
         this.status = _status;
@@ -30,14 +26,14 @@ public class Order {
 
     // Set y Get id
     
-    private int id;
+    private int idOrder;
 
-    public int getId() {
-        return id;
+    public int getIdOrder() {
+        return idOrder;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdOrder(int idOrder) {
+        this.idOrder = idOrder;
     }
 
     // Set y Get date
@@ -81,4 +77,6 @@ public class Order {
     public static void setCount(int count) {
         Order.count = count;
     }
+
+    
 }
