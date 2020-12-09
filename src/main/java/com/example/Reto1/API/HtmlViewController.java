@@ -13,4 +13,12 @@ public class HtmlViewController {
         return vista;
     }
 
+    @GetMapping("")
+    public ModelAndView shops() {
+        ModelAndView vista = new ModelAndView("index");
+        vista.addObject("products", ProductsController.products);
+        return vista;
+    }
+
+
 }
