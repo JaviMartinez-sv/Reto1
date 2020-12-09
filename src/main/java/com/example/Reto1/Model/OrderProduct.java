@@ -47,6 +47,7 @@ public class OrderProduct {
         return order;
     }
 
+    /*
     public void setOrder(Order order) {
         this.order = order;
     }
@@ -72,6 +73,6 @@ public class OrderProduct {
         this.product = product;
     }
 
-
+*/
   
 }
