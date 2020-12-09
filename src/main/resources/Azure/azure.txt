@@ -1,0 +1,22 @@
+******** DESPLIEGUE DE AZURE *************
+
+1.- Instalar Apache Maven en Windows.
+        Para comprobar si ya está instalado, en CMD :  mvn --version
+        Si no aparece información, no está instalado. Ir aquí: https://maven.apache.org/download.cgi
+        Descargar version binaria .zip, descomprimir y copiar en la ruta del sistema (C:/Program Files)
+        Posteriormente, hay que editar las variables del sistema y añadir la ruta de la carpeta de Maven/bin 
+        en el Path.
+
+2.- Instalar Azure CLI
+        Para comprobar si ya está instalado, en CMD:  az login
+        Si no está instalado, ir a
+        https://aka.ms/installazurecliwindows
+        Instalar y reiniciar CMD. Ejecutar 'az login'. Iniciar sesión en https://portal.azure.com/#home
+
+3.- Compilar y desplegar la aplicación SpringBoot Maven
+        Desde CMD ir al directorio root de la aplicación. (Donde está el pom.xml)
+        Ejecutar comando mvn clean:install
+        Ejecutar mvn azure-webapp:config
+        Desde pom.xml, cambiar <pricingTier> a F1 (es el gratuito) y si quieres se puede cambiar el nombre
+        de la aplicación desde el campo <appName>
+        Ejecutar mvn azure-webapp:deploy y ya podemos acceder a la url que nos indica y ver nuestra AppWeb
