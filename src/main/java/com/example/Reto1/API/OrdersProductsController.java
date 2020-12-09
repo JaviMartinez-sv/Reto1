@@ -26,9 +26,7 @@ public class OrdersProductsController {
             new OrderProduct(3, OrdersController.orders.get(0), ProductsController.products.get(0)),
             new OrderProduct(1, OrdersController.orders.get(1), ProductsController.products.get(1)),
             new OrderProduct(2, OrdersController.orders.get(2), ProductsController.products.get(2)),
-            new OrderProduct(1, OrdersController.orders.get(3), ProductsController.products.get(3)),
-            new OrderProduct(1, OrdersController.orders.get(4), ProductsController.products.get(4))
-
+            new OrderProduct(1, OrdersController.orders.get(3), ProductsController.products.get(3))
     ));
 
     // Obtengo todos la lista de OrderProduct

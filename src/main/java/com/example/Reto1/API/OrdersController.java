@@ -17,8 +17,7 @@ public class OrdersController {
         new Order( "01/12/2020","Juan", "Acepted"),
         new Order( "02/12/2020","Maria", "Cancelled"),
         new Order( "03/12/2020","Alex", "InProgress"),
-        new Order( "04/12/2020","Paula", "Sent"),
-        new Order( "05/12/2020","Gabriel", "Delivered")
+        new Order( "04/12/2020","Paula", "Sent")
     ));
 
     // Obtengo todos los pedidos

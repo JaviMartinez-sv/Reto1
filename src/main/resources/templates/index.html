@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body style="background-color:cadetblue;">
+    <header>
+        <div class="card bg-dark text-white" >
+            <img class="card-img" src="https://adaits.es/files/2017/11/cabecera-fondo-leaders.jpg" alt="Card image" height="250px">
+            <div class="card-img-overlay">
+              <h4 class="card-title">Tienda</h4>
+              <p class="card-text">Tienda dedicada a la venta de bebidas alcoholicas</p>
+              <p class="card-text">Javier Martinez</p>
+            </div>
+          </div>
+    </header>
+    <p>
+    <p>   
+    <div class="card-deck" style= "padding-left: 1%; padding-right: 1%;">
+        <div class="card" th:each="Product : ${products}" th:object="${Product}">
+          <img class="card-img-top" th:src="*{image}"  alt="Card image cap">
+          <div class="card-body"  style="align-self:center; text-align: center;">
+            <h5 class="card-title" style="color:blue;" th:text="*{name}"></h5>
+            <p class="card-text" style="color:red;" th:text="*{price}"></p>
+            <a href="#" class="btn btn-primary">Añadir</a>
+          </div>
+        </div>
+    </div>
+    <p>
+    <p>
+    <footer>
+        <div class="card bg-dark text-white" >
+            <img class="card-img" src="https://adaits.es/files/2017/11/cabecera-fondo-leaders.jpg" alt="Card image" height="70px">
+            <div class="card-img-overlay">
+              <h4 class="card-title"style="text-align: center;">" La chispa de la vida"</h4> <!--It's the Real Thing-->
+            </div>
+          </div>
+    </footer>
+</body>
+</html>
